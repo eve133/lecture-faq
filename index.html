@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>강의 안내 FAQ</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  :root {
+    --page: #F5F6F8;
+    --bg: #FFFFFF;
+    --ink: #14151A;
+    --ink-soft: #5B6472;
+    --rule: #E6E8EC;
+    --navy: #12172E;
+    --red: #E8332B;
+    --red-soft: #FDEAE9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 480px; margin: 0 auto; background: var(--bg); min-height: 100vh; padding: 32px 20px 64px; }
+  header { padding-bottom: 4px; }
+  .kicker { display: inline-block; background: var(--navy); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 6px; margin-bottom: 14px; letter-spacing: 0.01em; }
+  header h1 { font-size: 25px; font-weight: 800; line-height: 1.4; margin: 0 0 10px; letter-spacing: -0.02em; color: var(--ink); }
+  header p { margin: 0; color: var(--ink-soft); font-size: 14px; max-width: 34ch; }
+  section.group { margin-top: 32px; }
+  .section-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .section-head .badge { background: var(--navy); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 5px; flex-shrink: 0; }
+  .section-head h2 { font-size: 16.5px; font-weight: 700; margin: 0; color: var(--ink); }
+  .faq-item { background: var(--bg); border: 1px solid var(--rule); border-radius: 12px; margin-bottom: 10px; overflow: hidden; box-shadow: 0 1px 3px rgba(20,21,26,0.05); }
+  .faq-item + .faq-item { margin-top: 10px; }
+  .faq-q { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; padding: 15px 18px; font-size: 15px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .faq-q .plus { flex-shrink: 0; width: 20px; height: 20px; position: relative; }
+  .faq-q .plus::before, .faq-q .plus::after { content: ''; position: absolute; background: var(--navy); top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .faq-q .plus::before { width: 12px; height: 2px; }
+  .faq-q .plus::after { width: 2px; height: 12px; transition: transform 0.2s ease; }
+  .faq-item.open .faq-q .plus::after { transform: translate(-50%, -50%) rotate(90deg) scaleY(0); }
+  .faq-item.open .faq-q { border-bottom: 1px solid var(--rule); }
+  .faq-a-wrap { height: 0; overflow: hidden; transition: height 0.3s ease; }
+  .answer { padding: 14px 18px 18px; font-size: 14.5px; color: var(--ink-soft); }
+  .answer ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .answer li { display: flex; gap: 9px; align-items: flex-start; }
+  .answer li .emoji { flex-shrink: 0; }
+  .answer li .text { flex: 1; min-width: 0; }
+  .answer strong { color: var(--red); background: var(--red-soft); padding: 1px 6px; border-radius: 4px; font-weight: 700; }
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-soft); }
+  footer .gold { font-weight: 700; color: var(--navy); }
+
+  .contact-card { margin-top: 32px; background: var(--page); border: 1px solid var(--rule); border-radius: 14px; padding: 24px 20px; text-align: center; }
+  .contact-card .contact-title { font-size: 16px; font-weight: 700; margin: 0 0 6px; color: var(--ink); }
+  .contact-card .contact-sub { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 18px; }
+  .contact-card img.qr { width: 150px; height: 150px; border-radius: 10px; background: #fff; padding: 8px; border: 1px solid var(--rule); margin-bottom: 16px; }
+  .contact-card .contact-btn { display: inline-block; background: var(--navy); color: #fff; font-size: 14.5px; font-weight: 700; text-decoration: none; padding: 12px 22px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">먼저 해결해 드릴게요!</p>
+    <h1>월급쟁이부자들 강의장 FAQ</h1>
+    <p>궁금한 항목을 톡톡 눌러 확인해 보세요🩵</p>
+  </header>
+
+  <section class="group">
+    <div class="section-head"><span class="badge">01</span><h2>강의 참석 전</h2></div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">강의장 입장은 언제부터 가능한가요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🕐</span><span class="text">쾌적한 준비와 강사님의 리허설 진행을 위해<br>강의장은 강의 시작 <strong>1시간 전</strong>부터 입장 가능해요.</span></li>
+        <li><span class="emoji">🪑</span><span class="text">시간 맞춰 오셔서 편하게 자리 잡으시고, 준비해보세요:)</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">강의장 입장은 어떻게 하나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🚪</span><span class="text">오른쪽 문을 열고 입장해주세요!</span></li>
+        <li><span class="emoji">📺</span><span class="text">문이 안 열려 있다면 하단 방법으로 인터폰 눌러주세요!</span></li>
+        <li><span class="emoji">🔑</span><span class="text">왼쪽 모니터 <strong>1번 → 4번 → 호출</strong> 버튼</span></li>
+        <li><span class="emoji">💬</span><span class="text">운영매니저가 원격으로 열어드릴테니 걱정 마세요:)</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">중간입장/중간퇴장 가능할까요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🚶</span><span class="text"><strong>중간입장/중간퇴장</strong> 가능해요!</span></li>
+        <li><span class="emoji">📺</span><span class="text">다만, 놓친 부분은 온라인에서 알차게 챙겨가기 약속!</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">노트북 사용이 가능한가요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">💻</span><span class="text">노트북 <strong>사용 가능</strong>합니다:)</span></li>
+        <li><span class="emoji">💬</span><span class="text">온라인 강의 촬영이 동시 진행 중으로<br>앞에서 1~3번째 줄은 노트북 금지석인 점 양해 부탁드려요.</span></li>
+        <li><span class="emoji">👍</span><span class="text">무소음 키스킨도 준비되어 있으니<br>대여 원하시면 운영매니저에게 요청해주세요!</span></li>
+      </ul></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="section-head"><span class="badge">02</span><h2>강의 중</h2></div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">강의는 보통 몇 시간 진행되나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">⏳</span><span class="text">보통 <strong>4~5시간</strong> 정도 진행돼요</span></li>
+        <li><span class="emoji">📚</span><span class="text">알찬 내용을 다 담다 보면 조금 길어질 수도 있어요!</span></li>
+        <li><span class="emoji">➕</span><span class="text">Q&amp;A까지 진행되면 <strong>30분~1시간</strong> 정도 더 걸릴 수 있어요</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">강의장에서 음식을 먹어도 되나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🍪</span><span class="text">냄새 안 나는 다과·샌드위치는 강의장 안에서 <strong>OK</strong></span></li>
+        <li><span class="emoji">🚫</span><span class="text">김밥, 라면처럼 향 강한 음식은 강의장 안에서는 <strong>NO</strong></span></li>
+        <li><span class="emoji">🌿</span><span class="text">그런 음식이 당기시는 여러분을 위해 테라스가 마련되어있어요!</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">점심시간이 따로 있나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🙅🏻‍♀️</span><span class="text">별도 점심시간은 없습니다!</span></li>
+        <li><span class="emoji">💬</span><span class="text">강의에 집중할 수 있도록 미리 배를 든든히 채우고 와주세요:)</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">쉬는시간 있나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">😌</span><span class="text">강의 중간에는 <strong>약 10~15분</strong>의 휴게 시간이 있습니다.</span></li>
+        <li><span class="emoji">📢</span><span class="text">다만, 강사님 별로 시간은 상이할 수 있습니다!</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">음료 마셔도 되나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🥤</span><span class="text">물론이죠, 얼마든지요!</span></li>
+        <li><span class="emoji">😇</span><span class="text"><strong>커피머신, 정수기, 얼음, 종이컵, 티백(차)</strong>도<br>강의장에 전부 준비되어 있답니다 :)</span></li>
+      </ul></div></div>
+    </div>
+  </section>
+
+  <section class="group">
+    <div class="section-head"><span class="badge">03</span><h2>강의 종료 후</h2></div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">Q&amp;A 진행이 되나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">❓</span><span class="text">Q&amp;A는 매번 진행되는 건 아니에요</span></li>
+        <li><span class="emoji">💛</span><span class="text">그날 상황에 따라 진행되지 않을 수 있으니 너그럽게 양해 부탁드려요</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">강사님께 사인받고 싶은데, 그래도 될까요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">✍️</span><span class="text">사인회는 <strong>매번 진행되는 건 아니에요</strong></span></li>
+        <li><span class="emoji">💛</span><span class="text">그날 상황에 따라 어려울 수 있으니 너그럽게 양해 부탁드려요</span></li>
+      </ul></div></div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" type="button">강의교재 가져가도 되나요?<span class="plus"></span></button>
+      <div class="faq-a-wrap"><div class="answer"><ul>
+        <li><span class="emoji">🙆🏻‍♀️</span><span class="text">그럼요, 여러분을 위해 준비된 것이랍니다!</span></li>
+        <li><span class="emoji">💬</span><span class="text">필기한 것들 잘 복습하고 복기해보세요:)</span></li>
+      </ul></div></div>
+    </div>
+  </section>
+  <div class="contact-card">
+    <p class="contact-title">궁금한 게 해결되지 않았다면?</p>
+    <p class="contact-sub">아래 큐알 또는 버튼을 눌러 카카오톡으로 편하게 문의해주세요!</p>
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=http%3A%2F%2Fpf.kakao.com%2F_PQxdfX%2Fchat" alt="카카오톡 채널 QR코드">
+    <br>
+    <a class="contact-btn" href="http://pf.kakao.com/_PQxdfX/chat" target="_blank" rel="noopener">💬 카카오톡으로 문의하기</a>
+  </div>
+
+  <footer>
+    그래도 궁금한 게 남아있다면? 주저 말고 <span class="gold">운영매니저(이브, 앤디)</span>를 붙잡아주세요 🙋‍♀️ 다정하게 알려드릴게요.
+  </footer>
+</div>
+<script>
+document.querySelectorAll('.faq-item').forEach(function (item) {
+  var btn = item.querySelector('.faq-q');
+  var wrap = item.querySelector('.faq-a-wrap');
+  btn.addEventListener('click', function () {
+    var isOpen = item.classList.contains('open');
+    if (isOpen) {
+      wrap.style.height = wrap.scrollHeight + 'px';
+      requestAnimationFrame(function () { wrap.style.height = '0px'; });
+      item.classList.remove('open');
+    } else {
+      item.classList.add('open');
+      wrap.style.height = wrap.scrollHeight + 'px';
+      wrap.addEventListener('transitionend', function onEnd() {
+        if (item.classList.contains('open')) { wrap.style.height = 'auto'; }
+        wrap.removeEventListener('transitionend', onEnd);
+      });
+    }
+  });
+});
+</script>
+</body>
+</html>
